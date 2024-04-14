@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
   <!-- Circles' head scripts [REQUIRED] -->
   <meta charset="UTF-8">
@@ -12,7 +12,7 @@
   <circles-start-ui/>
 
   <!-- a-scene with 'circles-properties' component [REQUIRED] -->
-  <a-scene circles_scene_properties background="color: black;">
+  <a-scene circles_scene_properties background="color: blue">
     <a-assets>
 
       <!-- Circles' built-in assets [REQUIRED] -->
@@ -21,7 +21,8 @@
 
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
-    <a-entity geometry="primitive: box" material="color: black"></a-entity>
+
+    <a-entity geometry="primitive: box" material="color: red" position="0 0 0"></a-entity>
   </a-scene>
 
   <!-- Circles' end scripts [REQUIRED] -->
