@@ -18,7 +18,17 @@
       <!-- Circles' built-in assets [REQUIRED] -->
       <circles-assets/>
     </a-assets>
-
+    
+    <!--Guys we can have a menu!!! (This also means lighthouse guy)-->
+    <a-entity id="menu" position="-0.475 .22 -0.3" geometry="primitive: plane; height: 0.05; width: 0.05" material="color: blue;">
+        <a-entity id="menu_button" text="value:Menu; 
+                  color:white; font:roboto; width:0.2; align:center; anchor:center; baseline:top;" ></a-entity>
+    </a-entity>
+    <a-entity id="oldman" position="0.475 0.22 -0.3" geometry="primitive: circle; radius: 0.02;" material="color: white;">
+        <a-entity text="value:Old Man; 
+                  color:white; font:roboto; width:0.2; align:center; anchor:center; baseline:top;" ></a-entity>
+    </a-entity>
+    
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
 
