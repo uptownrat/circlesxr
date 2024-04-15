@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Going Up</title>
   <circles-start-scripts/>
-  
+
 </head>
 <body>
   <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
   <circles-start-ui/>
 
   <!-- a-scene with 'circles-properties' component [REQUIRED] -->
-  <a-scene circles_scene_properties>
+  <a-scene circles_scene_properties background="color:rgb(114, 189, 232)">
     <a-assets>
+      <img id="labPhoto" src="/src/worlds/GoingUp/assets/lab.jpg" crossorigin="anonymous">
+      <img id="islandPhoto" src="/src/worlds/GoingUp/assets/lab.jpg" crossorigin="anonymous">
 
       <!-- Circles' built-in assets [REQUIRED] -->
       <circles-assets/>
@@ -29,16 +31,18 @@
 
     <a-entity id="innovationLab_link"
               position="4 1 1" rotation="0 180 0" scale="1 1 1"
-              circles-portal="img_src:#link_1_360; title_text:Innovation Lab; link_url:/w/GoingUp/pages/innovationLab.html"
-              circles-label="text:Enter the Innovation Lab; visible:true; offset:0.4 1.0 0; arrow_position:down;"></a-entity>
+              circles-portal="img_src:#labPhoto; title_text:Innovation Lab; link_url:/w/GoingUp/pages/innovationLab.html"></a-entity>
 
     <!--island-->
     <a-entity position="6 2 1" rotation="0 180 0"
               text="value: Discover historical artifacts on the mysterious island and furnish the lighthouse.; color: black"></a-entity>
     <a-entity id="island_link"
               position="6 1 1" rotation="0 180 0" scale="1 1 1"
-              circles-portal="img_src:#link_1_360; title_text:The Island; link_url:/w/GoingUp/pages/island.html"
-              circles-label="text:Enter the Island; visible:true; offset:0.4 1.0 0; arrow_position:down;"></a-entity>
+              circles-portal="img_src:#islandPhoto; title_text:The Island; link_url:/w/GoingUp/pages/island.html"></a-entity>
+
+    <!--checkpoints-->
+    <a-entity circles-checkpoint circles-spawnpoint position="-1.44 0.05 2.6"></a-entity>
+    <a-entity circles-checkpoint circles-spawnpoint position="2 0.05 2.6"></a-entity>
   </a-scene>
 
   <!-- Circles' end scripts [REQUIRED] -->
