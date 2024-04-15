@@ -22,6 +22,23 @@
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
 
+    <!-- TELEPORTS TO OTHER LOCATIONS -->
+    <!--lab-->
+    <a-entity position="4 2 1" rotation="0 180 0"
+              text="value: Explore the Innovation Lab to discover historical artifacts and help your teammate.; color: black"></a-entity>
+
+    <a-entity id="innovationLab_link"
+              position="4 1 1" rotation="0 180 0" scale="1 1 1"
+              circles-portal="img_src:#link_1_360; title_text:Innovation Lab; link_url:/w/GoingUp/pages/innovationLab.html"
+              circles-label="text:Enter the Innovation Lab; visible:true; offset:0.4 1.0 0; arrow_position:down;"></a-entity>
+
+    <!--island-->
+    <a-entity position="6 2 1" rotation="0 180 0"
+              text="value: Discover historical artifacts on the mysterious island and furnish the lighthouse.; color: black"></a-entity>
+    <a-entity id="island_link"
+              position="6 1 1" rotation="0 180 0" scale="1 1 1"
+              circles-portal="img_src:#link_1_360; title_text:The Island; link_url:/w/GoingUp/pages/island.html"
+              circles-label="text:Enter the Island; visible:true; offset:0.4 1.0 0; arrow_position:down;"></a-entity>
   </a-scene>
 
   <!-- Circles' end scripts [REQUIRED] -->
