@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Going Up</title>
   <circles-start-scripts/>
-  <script src="js/aframe-environment-component.min.js"></script>
-  <script src="js/addToInventory.js"></script>
+  <script src="/worlds/Island/js/aframe-environment-component.min.js"></script>
+  <script src="/worlds/Island/js/addToInventory.js"></script>
 </head>
 <body>
   <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
@@ -17,14 +17,16 @@
           environment=" scale: 2, 2, 2; ground: flat; dressing: trees; dressingAmount: 200;
           dressingColor: #497952; dressingOnPlayArea: 0.00; dressingScale: 8.7; groundTexture:walkernoise; 
           groundColor: #40618c; groundColor2: #73b3ce; fog:0.86; seed:4; playArea: 2; groundScale: 2;">
-    <a-assets>
-      <img id="labPhoto" src="/src/worlds/GoingUp/assets/lab.jpg" crossorigin="anonymous">
+    <a-assets>  <!-- ASSETS ---------------------------------- -->
+      <img id="labPhoto" src="/worlds/GoingUp/assets/lab.jpg" crossorigin="anonymous">
 
       <a-asset-item id="lighthouse_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/lighthouse.glb"></a-asset-item>
       <a-asset-item id="lantern_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/lantern.glb"></a-asset-item>
-      <a-asset-item id="stove_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/stove.glb"></a-asset-item>
+      <a-asset-item id="chrono_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/chronometer.glb"></a-asset-item>
+      <a-asset-item id="baro_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/barometer.glb"></a-asset-item>
       <a-asset-item id="key_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/key.glb"></a-asset-item>
-      <!-- /worlds/WIT_1_Kitchen/assets/models/Kitchen/scene.gltf -->
+      <a-asset-item id="compass_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/compass.glb"></a-asset-item>
+      <a-asset-item id="hook_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/hook.glb"></a-asset-item>
 
       <!-- Circles' built-in assets [REQUIRED] -->
       <circles-assets/>
@@ -38,40 +40,69 @@
 
     <!--TELPORT TO FLOOR 1-->
     <a-entity id="lighthouseF1_link"
-              position="20 1.634 14" rotation="0 -90 0" scale="1 1 1"
-              circles-portal="img_src:#islandPhoto; title_text:Enter the lighouse; link_url:/w/Lighthouse_F1"></a-entity>
+              position="-69.908 2 -65.148" rotation="0 -45 0" scale="1 1 1"
+              circles-portal="img_src:#LHPhoto; title_text:Enter the lighthouse; link_url:/w/Lighthouse_F1"></a-entity>
 
     <!-- ENVIRONMENT -->
       <a-entity id="lighthouse" static-body position="-75 0.75 -70" scale=".8 .8 .8" rotation="0, 45, 0" gltf-model="#lighthouse_mdl"></a-entity>
-      <a-entity id="bridge" static-body geometry="primitive: plane; width: 5; height:15" position="-70 0.15 -65" rotation="-90, 45, 0" material="color:grey"></a-entity>
+      <a-entity id="bridge" static-body geometry="primitive: plane; width: 5; height:15" position="-70 0.15 -65" rotation="-90, 45, 0" material="color:rgb(66, 45, 23)"></a-entity>
+      <a-entity static-body geometry="primitive: circle; radius: 90;" position="0, .1, 0" rotation="-90, 0, 0" material="color:rgb(48, 87, 32)" shadow="cast:false; receive:true;" obb-collider></a-entity>
     
     <!--ITEMS-->
-    <a-entity id="lantern" position="-1 0.1 -3" rotation="0 0 0" scale=".4 .4 .4" gltf-model="#lantern_mdl"
+    <a-entity id="lantern" position="-41 0.1 33" rotation="0 0 0" scale=".4 .4 .4" gltf-model="#lantern_mdl"
               circles-pickup-networked
               circles-artefact="inspectScale:.4 .4 .4; textRotationY:0.0; inspectRotation:0 0 0;
               label_offset:0.0 0.5 0.0; label_arrow_position:down;
               title:Lantern;
               description:'e and';
-              title_back:Math for Women;
+              title_back:Lantern;
               description_back: 'd';
-              label_text:Math;"></a-entity>
+              label_text:Lantern;"></a-entity>
 
-    <a-entity id="key" position="6 0.1 -3" rotation="0 45 0" scale=".3 .3 .3" gltf-model="#key_mdl"
+    <a-entity id="key" position="-46 0.1 43" rotation="0 45 0" scale=".3 .3 .3" gltf-model="#key_mdl"
               circles-pickup-networked
-              circles-artefact="inspectScale:1 1 1; textRotationY:0.0; inspectRotation:0 0 0;
+              circles-artefact="inspectScale:.3 .3 .3; textRotationY:0.0; inspectRotation:90 0 0;
               label_offset:0.0 0.5 0.0; label_arrow_position:down;
               title:Key;
               description:'e and';
+              title_back:Key;
+              description_back: 'd';
+              label_text:Key;"></a-entity>
+
+    <a-entity id="chronometer" position="-53 0.5 -47" rotation="0 0 0" scale=".2 .2 .2" gltf-model="#chrono_mdl"
+              circles-pickup-networked
+              circles-artefact="inspectScale:.2 .2 .2; textRotationY:0.0; inspectRotation:0 45 0;
+              label_offset:0.0 0.5 0.0; label_arrow_position:down;
+              title:Lantern;
+              description:'e and';
               title_back:Math for Women;
               description_back: 'd';
-              label_text:Math;"></a-entity>
-    
+              label_text:Chronometer;"></a-entity>
 
+    <a-entity id="barometer" position="-47 0.5 -40" rotation="90 90 0" scale=".5 .5 .5" gltf-model="#baro_mdl"
+              circles-pickup-networked
+              circles-artefact="inspectScale:.5 .5 .5; textRotationY:0.0; inspectRotation:0 0 0;
+              label_offset:0.0 0.5 0.0; label_arrow_position:down;
+              title:Lantern;
+              description:'e and';
+              title_back:Math for Women;
+              description_back: 'd';
+              label_text:Barometer;"></a-entity>
+
+    <a-entity id="hook" position="-40 0.5 -55" rotation="0 0 0" scale=".1 .1 .1" gltf-model="#hook_mdl"
+              circles-pickup-networked
+              circles-artefact="inspectScale:.1 .1 .1; textRotationY:0.0; inspectRotation:0 0 0;
+              label_offset:0.0 0.5 0.0; label_arrow_position:down;
+              title:Lantern;
+              description:'e and';
+              title_back:Math for Women;
+              description_back: 'd';
+              label_text:Sail Hook;"></a-entity>
 
     <!--checkpoints-->
-    <a-entity circles-checkpoint position="-2.14 0.05 -2.5"></a-entity>
-    <a-entity circles-checkpoint position="2.14 0.05 -2.5"></a-entity>
-    <a-entity circles-checkpoint circles-spawnpoint position="0 0 0"></a-entity>
+    <a-entity circles-checkpoint position="-50 0.13 -50"></a-entity>
+    <a-entity circles-checkpoint position="-47 0.13 -40"></a-entity>
+    <a-entity circles-checkpoint circles-spawnpoint position="-50 0.130 -65.148"></a-entity>
   </a-scene>
 
   <!-- Circles' end scripts [REQUIRED] -->
