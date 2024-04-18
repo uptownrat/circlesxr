@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+  <!-- Circles' head scripts [REQUIRED] -->
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Going Up</title>
+  <circles-start-scripts/>
+
+</head>
+<body>
+  <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
+  <circles-start-ui/>
+
+  <!-- a-scene with 'circles-properties' component [REQUIRED] -->
+  <a-scene circles_scene_properties background="color:rgb(114, 189, 232)">
+    <a-assets>
+      
+      <img id="islandPhoto" src="/src/worlds/GoingUp/assets/lab.jpg" crossorigin="anonymous">
+      <a-asset-item id="lighthouse_mdl" response-type="arraybuffer" src="/src/worlds/GoingUp/assets/models/lighthouse.glb"></a-asset-item>
+      <!-- Circles' built-in assets [REQUIRED] -->
+      <circles-assets/>
+    </a-assets>
+
+    <!-- Circles' built-in manager and avatar [REQUIRED] -->
+    <circles-manager-avatar/>
+
+    <!-- TELEPORTS TO OTHER LOCATIONS -->
+    <!--lab-->
+    <a-entity position="-2.14 3.1 -4.2" rotation="0 0 0" scale="2 2 2"
+              text="value: Explore the Innovation Lab to discover historical artifacts and help your teammate.; color: black"></a-entity>
+
+    <a-entity id="innovationLab_link"
+              position="-2.14 1.634 -4.2" rotation="0 -90 0" scale="1 1 1"
+              circles-portal="img_src:#labPhoto; title_text:Innovation Lab; link_url:/w/GoingUp/pages/innovationLab.html"></a-entity>
+
+    <!--island-->
+    <a-entity position="2.14 3.1 -4.2" rotation="0 0 0" scale="2 2 2"
+              text="value: Discover historical artifacts on the mysterious island and furnish the lighthouse.; color: black"></a-entity>
+    <a-entity id="island_link"
+              position="2.14 1.634 -4.2" rotation="0 -90 0" scale="1 1 1"
+              circles-portal="img_src:#islandPhoto; title_text:The Island; link_url:/w/ExampleWorld"></a-entity>
+
+    <a-entity id="Artefact-Keys"
+              position="-2.56 0.978 -1.09" rotation="-90 45.000 0" scale="1.3 1.3 1.3"
+              gltf-model="#lighthouse_mdl"
+              circles-sphere-env-map="src:#skyMap"
+              circles-pickup-networked
+              circles-artefact="inspectScale:5 5 5; textRotationY:90.0; inspectRotation:0 0 0;
+                                label_offset:0.0 0.5 0.0; label_arrow_position:down;
+                                title:Keys to the Future;
+                                description:'When I was young, the options my parents had were limited. They needed to work long hours for this shop, but I need to find my own path. Maybe my love of working with my hands and building could help automate areas in the shop.';
+                                title_back:Not Her Future;
+                                description_back:The years of dedication and hardship her parents fought through are felt in those shop keys. She passes them daily, reassuring herself that is not her path. Yet her parents quickly formed a decision to follow their footsteps and continue the legacy.;
+                                label_text:Keys;"></a-entity>
+
+    <!--checkpoints-->
+    <a-entity circles-checkpoint position="-2.14 0.05 -2.5"></a-entity>
+    <a-entity circles-checkpoint position="2.14 0.05 -2.5"></a-entity>
+    <a-entity circles-checkpoint circles-spawnpoint position="0 0 0"></a-entity>
+  </a-scene>
+
+  <!-- Circles' end scripts [REQUIRED] -->
+  <circles-end-scripts/>
+ </body>
+</html>
