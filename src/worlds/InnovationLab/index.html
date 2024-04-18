@@ -19,28 +19,34 @@
     <a-assets>
       <img id="labPhoto" src="/src/worlds/GoingUp/assets/lab.jpg" crossorigin="anonymous">
 
-      <a-asset-item id="lighthouse_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/lighthouse.glb"></a-asset-item>
-      <a-asset-item id="lantern_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/lantern.glb"></a-asset-item>
-      <a-asset-item id="stove_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/stove.glb"></a-asset-item>
-      <a-asset-item id="key_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/key.glb"></a-asset-item>
-      <!-- /worlds/WIT_1_Kitchen/assets/models/Kitchen/scene.gltf -->
+      <a-asset-item id="lab_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/lab.glb"></a-asset-item>
+      <a-asset-item id="chair_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/chair.glb"></a-asset-item>
+      <a-asset-item id="shelve_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/shelve.glb"></a-asset-item>
+      <a-asset-item id="table_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/table.glb"></a-asset-item>
+      <a-asset-item id="smallTable_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/smallTable.glb"></a-asset-item>
 
       <!-- Circles' built-in assets [REQUIRED] -->
       <circles-assets/>
     </a-assets>
-      <a-entity id="menu" position="-0.475 .22 -0.3" geometry="primitive: plane; height: 0.05; width: 0.05" material="color: blue;">
+
+      <!-- <a-entity id="menu" position="-0.475 .22 -0.3" geometry="primitive: plane; height: 0.05; width: 0.05" material="color: blue;">
         <a-entity id="menu_button" text="value:Menu; 
                   color:white; font:roboto; width:0.2; align:center; anchor:center; baseline:top;" ></a-entity>
-      </a-entity>
+      </a-entity> -->
+
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
 
     <!-- ENVIRONMENT -->
-      <a-entity id="lighthouse" static-body position="-75 0.75 -70" scale=".8 .8 .8" rotation="0, 45, 0" gltf-model="#lighthouse_mdl"></a-entity>
-      <a-entity id="bridge" static-body geometry="primitive: plane; width: 5; height:15" position="-70 0.15 -65" rotation="-90, 45, 0" material="color:grey"></a-entity>
+      <a-entity id="lab" static-body position="0 0 0" scale="1 1 1" rotation="0 0 0" gltf-model="#lab_mdl"></a-entity>
+      <a-entity id="table" static-body position="2 0 3" scale="1 1 1" rotation="0 0 0" gltf-model="#table_mdl"></a-entity>
+      <a-entity id="table_chair_1" static-body position="5 0 4" scale="1 1 1" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
+      <a-entity id="table_chair_2" static-body position="1 0 2" scale="1 1 1" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
+      <a-entity id="table_chair_3" static-body position="3 0 5" scale="1 1 1" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
+    
     
     <!--ITEMS-->
-    <a-entity id="lantern" position="-1 0.1 -3" rotation="0 0 0" scale=".4 .4 .4" gltf-model="#lantern_mdl"
+    <!-- <a-entity id="lantern" position="-1 0.1 -3" rotation="0 0 0" scale=".4 .4 .4" gltf-model="#lantern_mdl"
               circles-pickup-networked
               circles-artefact="inspectScale:.4 .4 .4; textRotationY:0.0; inspectRotation:0 0 0;
               label_offset:0.0 0.5 0.0; label_arrow_position:down;
@@ -48,7 +54,7 @@
               description:'e and';
               title_back:Math for Women;
               description_back: 'd';
-              label_text:Math;"></a-entity>
+              label_text:Math;"></a-entity> -->
 
     <!--checkpoints-->
     <a-entity circles-checkpoint position="-2.14 0.05 -2.5"></a-entity>

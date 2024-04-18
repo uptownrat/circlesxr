@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Going Up</title>
   <circles-start-scripts/>
-
+  <script src="js/aframe-environment-component.min.js"></script>
+  <script src="js/addToInventory.js"></script>
 </head>
 <body>
   <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
@@ -65,15 +66,7 @@
               description_back: 'd';
               label_text:Math;"></a-entity>
     
-    <a-entity id="stove" position="-4 0.1 -2" rotation="0 45 0" scale=".1 .1 .1" gltf-model="#stove_mdl"
-              circles-pickup-networked
-              circles-artefact="inspectScale:1 1 1; textRotationY:0.0; inspectRotation:0 0 0;
-              label_offset:0.0 0.5 0.0; label_arrow_position:down;
-              title:Stove;
-              description:'e and';
-              title_back:Math for Women;
-              description_back: 'd';
-              label_text:Math;"></a-entity>
+
 
     <!--checkpoints-->
     <a-entity circles-checkpoint position="-2.14 0.05 -2.5"></a-entity>
