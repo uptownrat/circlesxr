@@ -10,7 +10,7 @@ AFRAME.registerComponent('addToInventory', {
     init: function()
     {
         //const Context_AF = this;
-        let socket = io('http://localhost:8080');
+        let socket = io('http://localhost:1111');
 
         socket.on('connect', (userData) => {
             console.log('I exist!');

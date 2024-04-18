@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+  <!-- Circles' head scripts [REQUIRED] -->
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Going Up</title>
+  <circles-start-scripts/>
+
+</head>
+<body>
+  <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
+  <circles-start-ui/>
+
+  <!-- a-scene with 'circles-properties' component [REQUIRED] -->
+  <a-scene circles_scene_properties background="color:rgb(114, 189, 232)"
+          environment=" scale: 2, 2, 2; ground: flat; dressing: trees; dressingAmount: 200;
+          dressingColor: #497952; dressingOnPlayArea: 0.00; dressingScale: 8.7; groundTexture:walkernoise; 
+          groundColor: #40618c; groundColor2: #73b3ce; fog:0.86; seed:4; playArea: 2; groundScale: 2;">
+    <a-assets>
+      <img id="labPhoto" src="/src/worlds/GoingUp/assets/lab.jpg" crossorigin="anonymous">
+
+      <a-asset-item id="lighthouse_mdl" response-type="arraybuffer" src="/worlds/Lighthouse_F1/assets/models/lighthouse.glb"></a-asset-item>
+      <!-- /worlds/WIT_1_Kitchen/assets/models/Kitchen/scene.gltf -->
+
+      <!-- Circles' built-in assets [REQUIRED] -->
+      <circles-assets/>
+    </a-assets>
+      <a-entity id="menu" position="-0.475 .22 -0.3" geometry="primitive: plane; height: 0.05; width: 0.05" material="color: blue;">
+        <a-entity id="menu_button" text="value:Menu; 
+                  color:white; font:roboto; width:0.2; align:center; anchor:center; baseline:top;" ></a-entity>
+      </a-entity>
+    <!-- Circles' built-in manager and avatar [REQUIRED] -->
+    <circles-manager-avatar/>
+
+    <!--TELPORT TO FLOOR 2-->
+    <a-entity position="20 3 14" rotation="0 0 0" scale="2 2 2"
+              text="value: Discover historical artifacts on the mysterious island and furnish the lighthouse.; color: black"></a-entity>
+    <a-entity id="nextFloor_link"
+              position="20 1.634 14" rotation="0 -90 0" scale="1 1 1"
+              circles-portal="img_src:#islandPhoto; title_text:Second Level; link_url:/w/GoingUp"></a-entity>
+
+    <!-- ENVIRONMENT -->
+      <a-entity id="lighthouse" static-body position="-75 0.75 -70" scale=".8 .8 .8" rotation="0, 45, 0" gltf-model="#lighthouse_mdl"></a-entity>
+    
+    <!--ITEMS-->
+    
+
+    <!--checkpoints-->
+    <a-entity circles-checkpoint position="-2.14 0.05 -2.5"></a-entity>
+    <a-entity circles-checkpoint position="2.14 0.05 -2.5"></a-entity>
+    <a-entity circles-checkpoint circles-spawnpoint position="0 0 0"></a-entity>
+  </a-scene>
+
+  <!-- Circles' end scripts [REQUIRED] -->
+  <circles-end-scripts/>
+ </body>
+</html>
