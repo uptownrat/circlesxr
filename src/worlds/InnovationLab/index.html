@@ -42,12 +42,14 @@
     <!-- ENVIRONMENT -->
       <a-entity id="lab" static-body position="0 0 0" scale="1 1 1" rotation="0 0 0" gltf-model="#lab_mdl"></a-entity>
       <a-entity id="table" static-body position="-0.32 1.078 -0.466" scale=".5 .5 .5" rotation="0 0 0" gltf-model="#table_mdl"></a-entity>
-      <a-entity id="smallTable" static-body position="-0.32 1.078 -0.466" scale=".5 .5 .5" rotation="0 0 0" gltf-model="#smallTable_mdl"></a-entity>
-      <a-entity id="table_chair_1" static-body position="5 1.218 4" scale=".6 .6 .6" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
-      <a-entity id="table_chair_2" static-body position="1 1.218 2" scale=".6 .6 .6" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
-      <a-entity id="table_chair_3" static-body position="3 1.218 5" scale=".6 .6 .6" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
+      <a-entity id="smallTable" static-body position="-6.36 1.078 -5.142" scale=".5 .5 .5" rotation="0 0 0" gltf-model="#smallTable_mdl"></a-entity>
+      <a-entity id="table_chair_1" static-body position="0.987 1.218 0.053" scale=".6 .6 .6" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
+      <a-entity id="table_chair_2" static-body position="-0.225 1.218 -1.181" scale=".6 .6 .6" rotation="0 120 0" gltf-model="#chair_mdl"></a-entity>
+      <a-entity id="table_chair_3" static-body position="-0.991 1.218 -0.442" scale=".6 .6 .6" rotation="0 210 0" gltf-model="#chair_mdl"></a-entity>
 
-      <a-entity id="map" static-body geometry="primitive: plane; width: 5; height:15" position="5 2 3" rotation="0 0 0" material="#map"></a-entity>
+      <a-entity position="2 1 3"
+        ><a-image src="#map" width="1" height="1"></a-image></a-entity>
+      
     
     
     <!--ITEMS-->
@@ -62,9 +64,12 @@
               label_text:Math;"></a-entity> -->
 
     <!--checkpoints-->
-    <a-entity circles-checkpoint position="-2.14 0.05 -2.5"></a-entity>
-    <a-entity circles-checkpoint position="2.14 0.05 -2.5"></a-entity>
-    <a-entity circles-checkpoint circles-spawnpoint position="0 0 0"></a-entity>
+    <a-entity circles-checkpoint position="-6.204 0.45 -1.624"></a-entity>
+    <a-entity circles-checkpoint position="-4.210 0.45 2.225"></a-entity>
+    <a-entity circles-checkpoint position="1.983 0.45 -0.570"></a-entity>
+    <a-entity circles-checkpoint position="6.163 0.45 3.692"></a-entity>
+    <a-entity circles-checkpoint position="0.836 0.45 4.064"></a-entity>
+    <a-entity circles-checkpoint circles-spawnpoint position="5.126 0.45 -3.026"></a-entity>
   </a-scene>
 
   <!-- Circles' end scripts [REQUIRED] -->
