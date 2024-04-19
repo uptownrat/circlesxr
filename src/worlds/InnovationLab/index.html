@@ -17,15 +17,15 @@
           dressingColor: #497952; dressingOnPlayArea: 0.00; dressingScale: 8.7; groundTexture:walkernoise; 
           groundColor: #40618c; groundColor2: #73b3ce; fog:0.86; seed:4; playArea: 2; groundScale: 2;">
     <a-assets>
-      <img id="labPhoto" src="/src/worlds/GoingUp/assets/lab.jpg" crossorigin="anonymous">
-      <!-- <img id="map" src="/worlds/InnovationLab/assets/textures/map-01.jpg" crossorigin="anonymous" alt="map"> -->
+      
+      <img id="mapPhoto" src="/worlds/InnovationLab/assets/textures/map-01.jpg" crossorigin="anonymous" alt="map">
 
       <a-asset-item id="lab_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/lab.glb"></a-asset-item>
       <a-asset-item id="chair_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/chair.glb"></a-asset-item>
       <a-asset-item id="shelve_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/shelve.glb"></a-asset-item>
       <a-asset-item id="table_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/table.glb"></a-asset-item>
       <a-asset-item id="smallTable_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/smallTable.glb"></a-asset-item>
-      <a-asset-item id="map" crossorigin="anonymous" src="/worlds/InnovationLab/assets/textures/map-01.jpg"></a-asset-item>
+      <!-- <a-asset-item id="map" crossorigin="anonymous" src="/worlds/InnovationLab/assets/textures/map-01.jpg"></a-asset-item> -->
 
       <!-- Circles' built-in assets [REQUIRED] -->
       <circles-assets/>
@@ -47,8 +47,8 @@
       <a-entity id="table_chair_2" static-body position="-0.225 1.218 -1.181" scale=".6 .6 .6" rotation="0 120 0" gltf-model="#chair_mdl"></a-entity>
       <a-entity id="table_chair_3" static-body position="-0.991 1.218 -0.442" scale=".6 .6 .6" rotation="0 210 0" gltf-model="#chair_mdl"></a-entity>
 
-      <a-entity position="2 1 3"
-        ><a-image src="#map" width="1" height="1"></a-image></a-entity>
+      <a-entity id="map" position="-0.9 -0.36 0" scale="2.96 2.11 0"
+        ><a-image src="#mapPhoto" width="1" height="1"></a-image></a-entity>
       
     
     
