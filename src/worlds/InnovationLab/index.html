@@ -18,12 +18,14 @@
           groundColor: #40618c; groundColor2: #73b3ce; fog:0.86; seed:4; playArea: 2; groundScale: 2;">
     <a-assets>
       <img id="labPhoto" src="/src/worlds/GoingUp/assets/lab.jpg" crossorigin="anonymous">
+      <!-- <img id="map" src="/worlds/InnovationLab/assets/textures/map-01.jpg" crossorigin="anonymous" alt="map"> -->
 
       <a-asset-item id="lab_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/lab.glb"></a-asset-item>
       <a-asset-item id="chair_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/chair.glb"></a-asset-item>
       <a-asset-item id="shelve_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/shelve.glb"></a-asset-item>
       <a-asset-item id="table_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/table.glb"></a-asset-item>
       <a-asset-item id="smallTable_mdl" response-type="arraybuffer" src="/worlds/InnovationLab/assets/models/smallTable.glb"></a-asset-item>
+      <a-asset-item id="map" crossorigin="anonymous" src="/worlds/InnovationLab/assets/textures/map-01.jpg"></a-asset-item>
 
       <!-- Circles' built-in assets [REQUIRED] -->
       <circles-assets/>
@@ -39,10 +41,13 @@
 
     <!-- ENVIRONMENT -->
       <a-entity id="lab" static-body position="0 0 0" scale="1 1 1" rotation="0 0 0" gltf-model="#lab_mdl"></a-entity>
-      <a-entity id="table" static-body position="2 0 3" scale="1 1 1" rotation="0 0 0" gltf-model="#table_mdl"></a-entity>
-      <a-entity id="table_chair_1" static-body position="5 0 4" scale="1 1 1" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
-      <a-entity id="table_chair_2" static-body position="1 0 2" scale="1 1 1" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
-      <a-entity id="table_chair_3" static-body position="3 0 5" scale="1 1 1" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
+      <a-entity id="table" static-body position="-0.32 1.078 -0.466" scale=".5 .5 .5" rotation="0 0 0" gltf-model="#table_mdl"></a-entity>
+      <a-entity id="smallTable" static-body position="-0.32 1.078 -0.466" scale=".5 .5 .5" rotation="0 0 0" gltf-model="#smallTable_mdl"></a-entity>
+      <a-entity id="table_chair_1" static-body position="5 1.218 4" scale=".6 .6 .6" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
+      <a-entity id="table_chair_2" static-body position="1 1.218 2" scale=".6 .6 .6" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
+      <a-entity id="table_chair_3" static-body position="3 1.218 5" scale=".6 .6 .6" rotation="0 0 0" gltf-model="#chair_mdl"></a-entity>
+
+      <a-entity id="map" static-body geometry="primitive: plane; width: 5; height:15" position="5 2 3" rotation="0 0 0" material="#map"></a-entity>
     
     
     <!--ITEMS-->
