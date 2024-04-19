@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Going Up</title>
+    <script src="js/spawn_items.js"></script>
   <circles-start-scripts/>
 </head>
 <body>
@@ -23,6 +24,13 @@
       <a-asset-item id="table_mdl" response-type="arraybuffer" src="/worlds/Lighthouse_F1/assets/models/smallTable.glb"></a-asset-item>
       <a-asset-item id="chair_mdl" response-type="arraybuffer" src="/worlds/Lighthouse_F1/assets/models/chair.glb"></a-asset-item>
       <a-asset-item id="shelve_mdl" response-type="arraybuffer" src="/worlds/Lighthouse_F1/assets/models/shelve.glb"></a-asset-item>
+
+      <a-asset-item id="lantern_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/lantern.glb"></a-asset-item>
+      <a-asset-item id="chrono_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/chronometer.glb"></a-asset-item>
+      <a-asset-item id="baro_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/barometer.glb"></a-asset-item>
+      <a-asset-item id="key_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/key.glb"></a-asset-item>
+      <a-asset-item id="compass_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/compass.glb"></a-asset-item>
+      <a-asset-item id="hook_mdl" response-type="arraybuffer" src="/worlds/Island/assets/models/hook.glb"></a-asset-item>
       <!-- /worlds/WIT_1_Kitchen/assets/models/Kitchen/scene.gltf -->
 
       <!-- Circles' built-in assets [REQUIRED] -->
@@ -35,10 +43,12 @@
     <!-- Circles' built-in manager and avatar [REQUIRED] -->
     <circles-manager-avatar/>
 
-    <!--TELPORT TO OUTSIDE-->
-    <a-entity id="lighthouseF1_link"
-              position="1.2 1.2 1.48063" rotation="0 -45 0" scale="1 1 1"
-              circles-portal="img_src:#LHPhoto; title_text:The Island; link_url:/w/Island"></a-entity>
+    <!--TELPORT TO FLOOR 2-->
+    <a-entity position="20 3 14" rotation="0 0 0" scale="2 2 2"
+              text="value: Discover historical artifacts on the mysterious island and furnish the lighthouse.; color: black"></a-entity>
+    <a-entity id="nextFloor_link"
+              position="20 1.634 14" rotation="0 -90 0" scale="1 1 1"
+              circles-portal="img_src:#islandPhoto; title_text:Second Level; link_url:/w/GoingUp"></a-entity>
 
     <!-- ENVIRONMENT -->
     <a-light type="directional" color="#d9d49a" position="0 3.5 0" castshadow="true" light="type: point; color: #fff0d1; intensity: 15.92; castShadow: true" scale="3 1 3" rotation="0.31100000000000005 -17.589 -0.218"></a-light><!-- Added light-->
@@ -51,12 +61,41 @@
       
     
     <!--ITEMS-->
-    
+    <a-entity id="lantern" position="0 0 0" rotation="0 0 0" scale=".4 .4 .4" gltf-model="#lantern_mdl"
+              circles-pickup-networked
+              circles-artefact="inspectScale:.4 .4 .4; textRotationY:0.0; inspectRotation:0 0 0;
+              label_offset:0.0 0.5 0.0; label_arrow_position:down;
+              label_text:Lantern;"></a-entity>
+
+    <a-entity id="key" spawn_items="duration:18000;" position="0 0 0" rotation="0 0 0" scale=".3 .3 .3" gltf-model="#key_mdl"
+              circles-pickup-networked
+              circles-artefact="inspectScale:.3 .3 .3; textRotationY:0.0; inspectRotation:90 0 0;
+              label_offset:0.0 0.5 0.0; label_arrow_position:down;
+              label_text:Key;"></a-entity>
+
+    <a-entity id="chronometer" position="0 0 0" rotation="0 0 0" scale=".2 .2 .2" gltf-model="#chrono_mdl"
+              circles-pickup-networked
+              circles-artefact="inspectScale:.2 .2 .2; textRotationY:0.0; inspectRotation:0 45 0;
+              label_offset:0.0 0.5 0.0; label_arrow_position:down;
+              label_text:Chronometer;"></a-entity>
+
+    <a-entity id="barometer" position="0 0 0" rotation="90 90 0" scale=".5 .5 .5" gltf-model="#baro_mdl"
+              circles-pickup-networked
+              circles-artefact="inspectScale:.5 .5 .5; textRotationY:0.0; inspectRotation:0 0 0;
+              label_offset:0.0 0.5 0.0; label_arrow_position:down;
+              label_text:Barometer;"></a-entity>
+
+    <a-entity id="hook" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" gltf-model="#hook_mdl"
+              circles-pickup-networked
+              circles-artefact="inspectScale:.1 .1 .1; textRotationY:0.0; inspectRotation:0 0 0;
+              label_offset:0.0 0.5 0.0; label_arrow_position:down;
+              label_text:Sail Hook;"></a-entity>
 
     <!--checkpoints-->
     <a-entity circles-checkpoint="" position="-1.23656 0.05 1.34496" class="checkpoint interactive" checkpoint="" material="color: rgb(57, 187, 130); emissive: rgb(7,137,80); roughness: 0.8" geometry="primitive: cylinder; radius: 0.5; height: 0.04" scale="" circles-material-extend-fresnel="fresnelOpacity: 0" sound="volume: 0.5" circles-interactive-object="type: outline"><a-entity class="object_highlight" geometry="primitive: cylinder; radius: 0.5; height: 0.04" checkpoint="" material="color: rgb(255,255,255); shader: flat; side: back" scale="" shadow="cast: false; receive: false" visible="false"></a-entity></a-entity>
-    <a-entity circles-checkpoint="" circles-spawnpoint position="0.07236 0.05 -1.78356" class="checkpoint interactive" checkpoint="" material="color: rgb(57, 187, 130); emissive: rgb(7,137,80); roughness: 0.8" geometry="primitive: cylinder; radius: 0.5; height: 0.04" scale="" circles-material-extend-fresnel="fresnelOpacity: 0" sound="volume: 0.5" circles-interactive-object="type: outline"><a-entity class="object_highlight" geometry="primitive: cylinder; radius: 0.5; height: 0.04" checkpoint="" material="color: rgb(255,255,255); shader: flat; side: back" scale="" shadow="cast: false; receive: false" visible="false"></a-entity></a-entity>
-    <a-entity circles-checkpoint="" position="1.47113 0 1.48063" class="checkpoint interactive" checkpoint="" material="color: rgb(57, 187, 130); emissive: rgb(7,137,80); roughness: 0.8" geometry="primitive: cylinder; radius: 0.5; height: 0.04" scale="" circles-material-extend-fresnel="fresnelOpacity: 0" sound="volume: 0.5" circles-interactive-object="type: outline"><a-entity class="object_highlight" geometry="primitive: cylinder; radius: 0.5; height: 0.04" checkpoint="" material="color: rgb(255,255,255); shader: flat; side: back" scale="" shadow="cast: false; receive: false" visible="false"></a-entity></a-entity>
+    <a-entity circles-checkpoint="" position="0.07236 0.05 -1.78356" class="checkpoint interactive" checkpoint="" material="color: rgb(57, 187, 130); emissive: rgb(7,137,80); roughness: 0.8" geometry="primitive: cylinder; radius: 0.5; height: 0.04" scale="" circles-material-extend-fresnel="fresnelOpacity: 0" sound="volume: 0.5" circles-interactive-object="type: outline"><a-entity class="object_highlight" geometry="primitive: cylinder; radius: 0.5; height: 0.04" checkpoint="" material="color: rgb(255,255,255); shader: flat; side: back" scale="" shadow="cast: false; receive: false" visible="false"></a-entity></a-entity>
+    <a-entity circles-checkpoint="" position="-1.23656 0.05 1.34496" class="checkpoint interactive" checkpoint="" material="color: rgb(57, 187, 130); emissive: rgb(7,137,80); roughness: 0.8" geometry="primitive: cylinder; radius: 0.5; height: 0.04" scale="" circles-material-extend-fresnel="fresnelOpacity: 0" sound="volume: 0.5" circles-interactive-object="type: outline"><a-entity class="object_highlight" geometry="primitive: cylinder; radius: 0.5; height: 0.04" checkpoint="" material="color: rgb(255,255,255); shader: flat; side: back" scale="" shadow="cast: false; receive: false" visible="false"></a-entity></a-entity>
+    <a-entity circles-checkpoint="" circles-spawnpoint="" position="1.47113 0 1.48063" class="checkpoint interactive" checkpoint="" material="color: rgb(57, 187, 130); emissive: rgb(7,137,80); roughness: 0.8" geometry="primitive: cylinder; radius: 0.5; height: 0.04" scale="" circles-material-extend-fresnel="fresnelOpacity: 0" sound="volume: 0.5" circles-interactive-object="type: outline"><a-entity class="object_highlight" geometry="primitive: cylinder; radius: 0.5; height: 0.04" checkpoint="" material="color: rgb(255,255,255); shader: flat; side: back" scale="" shadow="cast: false; receive: false" visible="false"></a-entity></a-entity>
   </a-scene>
 
   <!-- Circles' end scripts [REQUIRED] -->
