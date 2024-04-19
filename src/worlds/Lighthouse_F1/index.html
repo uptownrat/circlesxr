@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Going Up</title>
   <circles-start-scripts/>
-
 </head>
 <body>
   <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
@@ -15,11 +14,15 @@
   <a-scene circles_scene_properties background="color:rgb(114, 189, 232)"
           environment=" scale: 2, 2, 2; ground: flat; dressing: trees; dressingAmount: 200;
           dressingColor: #497952; dressingOnPlayArea: 0.00; dressingScale: 8.7; groundTexture:walkernoise; 
-          groundColor: #40618c; groundColor2: #73b3ce; fog:0.86; seed:4; playArea: 2; groundScale: 2;">
+          groundColor: #40618c; groundColor2: #73b3ce; fog:0.86; seed:4; playArea: 2; groundScale: 2;" shadow="type: pcfsoft">
     <a-assets>
       <img id="labPhoto" src="/src/worlds/GoingUp/assets/lab.jpg" crossorigin="anonymous">
 
-      <a-asset-item id="lighthouse_mdl" response-type="arraybuffer" src="/worlds/Lighthouse_F1/assets/models/lighthouse.glb"></a-asset-item>
+      <a-asset-item id="lighthouse_mdl" response-type="arraybuffer" src="/worlds/Lighthouse_F1/assets/models/lvl1.glb"></a-asset-item>
+      <a-asset-item id="stove_mdl" response-type="arraybuffer" src="/worlds/Lighthouse_F1/assets/models/stove.glb"></a-asset-item>
+      <a-asset-item id="table_mdl" response-type="arraybuffer" src="/worlds/Lighthouse_F1/assets/models/smallTable.glb"></a-asset-item>
+      <a-asset-item id="chair_mdl" response-type="arraybuffer" src="/worlds/Lighthouse_F1/assets/models/chair.glb"></a-asset-item>
+      <a-asset-item id="shelve_mdl" response-type="arraybuffer" src="/worlds/Lighthouse_F1/assets/models/shelve.glb"></a-asset-item>
       <!-- /worlds/WIT_1_Kitchen/assets/models/Kitchen/scene.gltf -->
 
       <!-- Circles' built-in assets [REQUIRED] -->
@@ -40,18 +43,26 @@
               circles-portal="img_src:#islandPhoto; title_text:Second Level; link_url:/w/GoingUp"></a-entity>
 
     <!-- ENVIRONMENT -->
-      <a-entity id="lighthouse" static-body position="-75 0.75 -70" scale=".8 .8 .8" rotation="0, 45, 0" gltf-model="#lighthouse_mdl"></a-entity>
+    <a-light type="directional" color="#d9d49a" position="0 3.5 0" castshadow="true" light="type: point; color: #fff0d1; intensity: 15.92; castShadow: true" scale="3 1 3" rotation="0.31100000000000005 -17.589 -0.218"></a-light><!-- Added light-->
+    <a-entity id="roof" geometry="primitive: plane; width: 20; height: 20" material="color: #cccccc" position="0 4 0" rotation="90 0 0"></a-entity> <!-- added roof -->
+      <a-entity id="lighthouse" static-body position="0 0 0" scale=".8 .8 .8" rotation="0, 45, 0" gltf-model="#lighthouse_mdl"></a-entity>
+      <a-entity id="stove" static-body="" position="-1.56024 0.03145 -1.59293" scale="0.05559 0.05559 0.05559" rotation="0 45 0" gltf-model="/worlds/Lighthouse_F1/assets/models/stove.glb"></a-entity>
+      <a-entity id="shelve" static-body="sphereRadius: NaN" position="-0.01296 0.77038 -0.53404" scale="0.56487 0.56487 0.56487" rotation="0 -9.694 0" gltf-model="/worlds/Lighthouse_F1/assets/models/shelve.glb" velocity=""></a-entity>
+      <a-entity id="chair" static-body="" position="-0.41072 1.0194 0.41072" scale="0.71309 0.71309 0.71309" rotation="0 45 0" gltf-model="/worlds/Lighthouse_F1/assets/models/chair.glb"></a-entity>
+      <a-entity id="smallTable" static-body="" position="-3.23245 0.69931 -0.77362" scale="0.60778 0.60778 0.60778" rotation="0 45 0" gltf-model="/worlds/Lighthouse_F1/assets/models/smallTable.glb"></a-entity>
+      
     
     <!--ITEMS-->
     
 
     <!--checkpoints-->
-    <a-entity circles-checkpoint position="-2.14 0.05 -2.5"></a-entity>
-    <a-entity circles-checkpoint position="2.14 0.05 -2.5"></a-entity>
-    <a-entity circles-checkpoint circles-spawnpoint position="0 0 0"></a-entity>
+    <a-entity circles-checkpoint="" position="-1.23656 0.05 1.34496" class="checkpoint interactive" checkpoint="" material="color: rgb(57, 187, 130); emissive: rgb(7,137,80); roughness: 0.8" geometry="primitive: cylinder; radius: 0.5; height: 0.04" scale="" circles-material-extend-fresnel="fresnelOpacity: 0" sound="volume: 0.5" circles-interactive-object="type: outline"><a-entity class="object_highlight" geometry="primitive: cylinder; radius: 0.5; height: 0.04" checkpoint="" material="color: rgb(255,255,255); shader: flat; side: back" scale="" shadow="cast: false; receive: false" visible="false"></a-entity></a-entity>
+    <a-entity circles-checkpoint="" position="0.07236 0.05 -1.78356" class="checkpoint interactive" checkpoint="" material="color: rgb(57, 187, 130); emissive: rgb(7,137,80); roughness: 0.8" geometry="primitive: cylinder; radius: 0.5; height: 0.04" scale="" circles-material-extend-fresnel="fresnelOpacity: 0" sound="volume: 0.5" circles-interactive-object="type: outline"><a-entity class="object_highlight" geometry="primitive: cylinder; radius: 0.5; height: 0.04" checkpoint="" material="color: rgb(255,255,255); shader: flat; side: back" scale="" shadow="cast: false; receive: false" visible="false"></a-entity></a-entity>
+    <a-entity circles-checkpoint="" circles-spawnpoint="" position="1.47113 0 1.48063" class="checkpoint interactive" checkpoint="" material="color: rgb(57, 187, 130); emissive: rgb(7,137,80); roughness: 0.8" geometry="primitive: cylinder; radius: 0.5; height: 0.04" scale="" circles-material-extend-fresnel="fresnelOpacity: 0" sound="volume: 0.5" circles-interactive-object="type: outline"><a-entity class="object_highlight" geometry="primitive: cylinder; radius: 0.5; height: 0.04" checkpoint="" material="color: rgb(255,255,255); shader: flat; side: back" scale="" shadow="cast: false; receive: false" visible="false"></a-entity></a-entity>
   </a-scene>
 
   <!-- Circles' end scripts [REQUIRED] -->
   <circles-end-scripts/>
+  
  </body>
 </html>
