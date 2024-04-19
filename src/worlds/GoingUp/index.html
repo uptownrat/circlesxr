@@ -39,7 +39,8 @@
     <a-entity id="island_link"
               position="2.14 1.634 -4.2" rotation="0 -90 0" scale="1 1 1"
               circles-portal="img_src:#islandPhoto; title_text:The Island; link_url:/w/Island"></a-entity>
-
+              <a-entity position="2.14 4 -4.2"><a-entity id="resetButton" onclick="clearLocalStorage()" circles-button="button_color: rgb(101,199,93); button_color_hover: rgb(66,133,61)"></a-entity></a-entity>
+              
     <!--checkpoints-->
     <a-entity circles-checkpoint position="-2.14 0.05 -2.5"></a-entity>
     <a-entity circles-checkpoint position="2.14 0.05 -2.5"></a-entity>
@@ -48,5 +49,16 @@
 
   <!-- Circles' end scripts [REQUIRED] -->
   <circles-end-scripts/>
+  <script>
+  function clearLocalStorage() {
+    localStorage.removeItem('inv_key');
+    localStorage.removeItem('inv_compass');
+    localStorage.removeItem('inv_barometer');
+    localStorage.removeItem('inv_lantern');
+    localStorage.removeItem('inv_chronometer');
+    
+    console.log("Local storage has been cleared.");
+}
+</script>
  </body>
 </html>
